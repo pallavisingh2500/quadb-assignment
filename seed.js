@@ -1,0 +1,160 @@
+const mongoose = require('mongoose');
+const Item = require('./models/item');
+const items = [
+    {
+        id: "1",
+        base_unit: "btc",
+        quote_unit: "inr",
+        low: "2961055.0",
+        high: "3074452.0",
+        last: "3021840.0",
+        type: "SPOT",
+        open: 2991272.0,
+        volume: "283.15109",
+        sell: "3023311.0",
+        buy: "3022010.0",
+        at: 1623775203,
+        name: "BTC/INR"
+    },
+    {
+        id: "2",
+        base_unit: "xrp",
+        quote_unit: "inr",
+        low: "63.5",
+        high: "69.7",
+        last: "65.4675",
+        type: "SPOT",
+        open: 67.7124,
+        volume: "953067.7",
+        sell: "65.4675",
+        buy: "65.4633",
+        at: 1623775203,
+        name: "XRP/INR"
+    },
+    // {
+    //     id:"3",
+    //     base_unit: "eth",
+    //     quote_unit: "inr",
+    //     low: "189000.0",
+    //     high: "197230.2",
+    //     last: "192135.0",
+    //     type: "SPOT",
+    //     open: 192710.0,
+    //     volume: "791.2195",
+    //     sell: "192203.0",
+    //     buy: "192083.0",
+    //     at: 1623775203,
+    //     name: "ETH/INR"
+    // },
+    // {
+    //     id:"4",
+    //     base_unit: "trx",
+    //     quote_unit: "inr",
+    //     low: "5.3",
+    //     high: "5.459",
+    //     last: "5.3771",
+    //     type: "SPOT",
+    //     open: 5.4,
+    //     volume: "11580270.0",
+    //     sell: "5.3787",
+    //     buy: "5.3771",
+    //     at: 1623775203,
+    //     name: "TRX/INR"
+    // },
+    // {
+    //     id:"5",
+    //     base_unit: "eos",
+    //     quote_unit: "inr",
+    //     low: "382.48",
+    //     high: "403.0",
+    //     last: "388.0",
+    //     type: "SPOT",
+    //     open: 389.0,
+    //     volume: "23772.21",
+    //     sell: "388.0",
+    //     buy: "387.76",
+    //     at: 1623775203,
+    //     name: "EOS/INR"
+    // },
+    // {
+    //     id:"6",
+    //     base_unit: "zil",
+    //     quote_unit: "inr",
+    //     low: "8.0",
+    //     high: "8.5",
+    //     last: "8.35",
+    //     type: "SPOT",
+    //     open: 8.1,
+    //     volume: "1391995.0",
+    //     sell: "8.35",
+    //     buy: "8.31",
+    //     at: 1623775203,
+    //     name: "ZIL/INR"
+    // },
+    // {
+    //     id:"6",
+    //     base_unit: "bat",
+    //     quote_unit: "inr",
+    //     low: "49.0",
+    //     high: "54.4",
+    //     last: "51.51",
+    //     type: "SPOT",
+    //     open: 50.17,
+    //     volume: "136452.87",
+    //     sell: "51.95",
+    //     buy: "51.51",
+    //     at: 1623775203,
+    //     name: "BAT/INR"
+    // },
+    // {
+    //     id:"7",
+    //     base_unit: "zrx",
+    //     quote_unit: "inr",
+    //     low: "66.0",
+    //     high: "72.45",
+    //     last: "68.75",
+    //     type: "SPOT",
+    //     open: 69.99,
+    //     volume: "36493.43",
+    //     sell: "68.79",
+    //     buy: "68.75",
+    //     at: 1623775203,
+    //     name: "ZRX/INR"
+    // },
+    // {
+    //     id:"8",
+    //     base_unit: "omg",
+    //     quote_unit: "inr",
+    //     low: "381.0",
+    //     high: "412.0",
+    //     last: "393.0",
+    //     type: "SPOT",
+    //     open: 388.0,
+    //     volume: "13202.81",
+    //     sell: "392.999",
+    //     buy: "392.8",
+    //     at: 1623775203,
+    //     name: "OMG/INR"
+    // },
+    // {
+    //     id:"9",
+    //     base_unit: "iost",
+    //     quote_unit: "inr",
+    //     low: "2.1",
+    //     high: "2.25",
+    //     last: "2.13",
+    //     type: "SPOT",
+    //     open: 2.16,
+    //     volume: "1720133.0",
+    //     sell: "2.15",
+    //     buy: "2.13",
+    //     at: 1623775203,
+    //     name: "IOST/INR"
+    // }
+]
+const seedDB = async () => {
+    await Item.insertMany(items);
+    console.log("DB seeded");
+}
+
+module.exports = seedDB;
